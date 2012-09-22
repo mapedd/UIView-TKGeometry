@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "UIView+TKGeometry"
   s.version      = "0.1"
-  s.summary      = "Category methods for UIView for easy size, center and origin manipulation"
+  s.summary      = "Category methods for UIView for easy size, center and origin manipulation."
   s.homepage     = "http://github.com/mapedd/UIView-TKGeometry"
   s.license      = 'MIT'
   s.author       = { "Tomek Kuzma" => "mapedd@mapedd.com" }
