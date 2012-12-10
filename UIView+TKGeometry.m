@@ -156,3 +156,19 @@ CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size)
 }
 
 @end
+
+
+@implementation UIView (TKCreation)
+
++ (UIView *)viewWithFrame:(CGRect)frame{
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    return view;
+}
+
++ (UIView *)viewWithFrame:(CGRect)frame andBackgroundColor:(UIColor *)color{
+    UIView *view = [UIView viewWithFrame:frame];
+    view.backgroundColor = color;
+    return view;
+}
+
+@end
