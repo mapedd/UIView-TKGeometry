@@ -78,8 +78,8 @@ CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size);
 
 @interface UIView (TKCreation)
 
-+ (UIView *)viewWithFrame:(CGRect)frame;
++ (UIView *)TKViewWithFrame:(CGRect)frame;
 
-+ (UIView *)viewWithFrame:(CGRect)frame andBackgroundColor:(UIColor *)color;
++ (UIView *)TKViewWithFrame:(CGRect)frame andBackgroundColor:(UIColor *)color;
 
 @end

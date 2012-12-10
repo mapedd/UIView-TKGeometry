@@ -160,13 +160,13 @@ CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size)
 
 @implementation UIView (TKCreation)
 
-+ (UIView *)viewWithFrame:(CGRect)frame{
++ (UIView *)TKViewWithFrame:(CGRect)frame{
     UIView *view = [[UIView alloc] initWithFrame:frame];
     return view;
 }
 
-+ (UIView *)viewWithFrame:(CGRect)frame andBackgroundColor:(UIColor *)color{
-    UIView *view = [UIView viewWithFrame:frame];
++ (UIView *)TKViewWithFrame:(CGRect)frame andBackgroundColor:(UIColor *)color{
+    UIView *view = [UIView TKViewWithFrame:frame];
     view.backgroundColor = color;
     return view;
 }
