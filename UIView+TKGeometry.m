@@ -9,13 +9,21 @@
 #import "UIView+TKGeometry.h"
 
 
-CGRect TKCGRectMakeBoundsFromFrame(CGRect frame){
+static __inline__ TKCGRectMakeBoundsFromFrame(CGRect frame){
     return CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height);
 }
 
-CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size)
+static __inline__ TKCGRectAtCenterWithSize(CGPoint center, CGSize size)
 {
     return CGRectMake(center.x - size.width/2.0, center.y - size.height/2.0, size.width, size.height);
+}
+
+static __inline__ CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect){
+
+    innerRect.origin.x = outerRect.origin.x+ floorf((outerRect.size.width - innerRect.size.width) / (CGFloat) 2.0);
+    innerRect.origin.y = outerRect.origin.y + floorf((outerRect.size.height - innerRect.size.height) / (CGFloat) 2.0);
+
+    return innerRect;
 }
 
 @implementation UIView (TKGeometry)

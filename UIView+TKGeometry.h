@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 
-CGRect TKCGRectMakeBoundsFromFrame(CGRect frame);
-CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size);
+static __inline__ CGRect TKCGRectMakeBoundsFromFrame(CGRect frame);
+static __inline__ CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size);
+static __inline__ CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect);
 
 @interface UIView (TKGeometry)
 
