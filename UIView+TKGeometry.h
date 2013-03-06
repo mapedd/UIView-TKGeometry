@@ -3,15 +3,15 @@
 //  Pure
 //
 //  Created by Tomasz Kuźma on 7/27/12.
-//  Copyright (c) 2012 Creadhoc Sp. z.o.o www.creadhoc.pl  , Tomasz Kuzma (mapedd@mapedd.com). All rights reserved.
+//  Copyright (c) 2012 Tomasz Kuźma Sp. z.o.o www.Tomasz Kuźma.pl  , Tomasz Kuzma (mapedd@mapedd.com). All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-
-CGRect TKCGRectMakeBoundsFromFrame(CGRect frame);
-CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size);
-CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect);
+inline CGPoint TKCGRectCenter(CGRect rect);
+inline CGRect TKCGRectMakeBoundsFromFrame(CGRect frame);
+inline CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size);
+inline CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect);
 
 @interface UIView (TKGeometry)
 

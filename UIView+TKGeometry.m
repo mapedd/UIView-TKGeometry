@@ -3,17 +3,21 @@
 //  Pure
 //
 //  Created by Tomasz Kuźma on 7/27/12.
-//  Copyright (c) 2012 Creadhoc Sp. z.o.o www.creadhoc.pl  , Tomasz Kuzma (mapedd@mapedd.com). All rights reserved.
+//  Copyright (c) 2012 Tomasz Kuźma Sp. z.o.o www.Tomasz Kuźma.pl  , Tomasz Kuzma (mapedd@mapedd.com). All rights reserved.
 //
 
 #import "UIView+TKGeometry.h"
 
+inline CGPoint TKCGRectCenter(CGRect rect){
+    return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
+}
 
-CGRect TKCGRectMakeBoundsFromFrame(CGRect frame){
+
+inline CGRect TKCGRectMakeBoundsFromFrame(CGRect frame){
     return CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height);
 }
 
-CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size){
+inline CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size){
     return CGRectMake(center.x - size.width/2.0, center.y - size.height/2.0, size.width, size.height);
 }
 
