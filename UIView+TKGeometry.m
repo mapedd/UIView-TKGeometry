@@ -8,20 +8,23 @@
 
 #import "UIView+TKGeometry.h"
 
-inline CGPoint TKCGRectCenter(CGRect rect){
+CGRect TKBoundsFromFrame(CGRect rect){
+    return CGRectMake(0.0f, 0.0f, rect.size.width, rect.size.height);
+}
+
+CGPoint TKCGRectCenter(CGRect rect){
     return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
 }
 
-
-inline CGRect TKCGRectMakeBoundsFromFrame(CGRect frame){
+CGRect TKCGRectMakeBoundsFromFrame(CGRect frame){
     return CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height);
 }
 
-inline CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size){
+CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size){
     return CGRectMake(center.x - size.width/2.0, center.y - size.height/2.0, size.width, size.height);
 }
 
-CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect){
+CGRect TKCGRectCenteredInRect(CGRect innerRect, CGRect outerRect){
 
     innerRect.origin.x = outerRect.origin.x+ floorf((outerRect.size.width - innerRect.size.width) / (CGFloat) 2.0);
     innerRect.origin.y = outerRect.origin.y + floorf((outerRect.size.height - innerRect.size.height) / (CGFloat) 2.0);
@@ -60,7 +63,7 @@ CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect){
 // frame
 
 - (CGFloat)height{
-    return self.frame.size.height;
+    return CGRectGetHeight(self.frame);
 }
 
 - (void)setHeight:(CGFloat)height{
@@ -70,7 +73,7 @@ CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect){
 }
 
 - (CGFloat)width{
-    return self.frame.size.width;
+    return CGRectGetWidth(self.frame);
 }
 
 - (void)setWidth:(CGFloat)width{
@@ -80,7 +83,7 @@ CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect){
 }
 
 - (CGFloat)xOrigin{
-    return self.frame.origin.x;
+    return CGRectGetMinX(self.frame);
 }
 
 - (void)setXOrigin:(CGFloat)xOrigin{
@@ -91,7 +94,7 @@ CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect){
 }
 
 - (CGFloat)yOrigin{
-    return self.frame.origin.y;
+    return CGRectGetMinY(self.frame);
 }
 
 - (void)setYOrigin:(CGFloat)yOrigin{
@@ -164,6 +167,63 @@ CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect){
 
 - (CGFloat)contentOffsetY{
     return self.contentOffset.y;
+}
+
+
+- (void)setContentHeight:(CGFloat)contentHeight{
+    CGSize size = self.contentSize;
+    size.height = contentHeight;
+    self.contentSize = size;
+}
+
+- (void)setContentWidth:(CGFloat)contentWidth{
+    CGSize size = self.contentSize;
+    size.width = contentWidth;
+    self.contentSize = size;
+}
+
+- (CGFloat)contentHeight{
+    return self.contentSize.height;
+}
+
+- (CGFloat)contentWidth{
+    return self.contentSize.width;
+}
+
+- (CGFloat)contentInsetTop{
+    return self.contentInset.top;
+}
+- (void)setContentInsetTop:(CGFloat)top{
+    UIEdgeInsets insets = self.contentInset;
+    insets.top = top;
+    self.contentInset = insets;
+}
+
+- (CGFloat)contentInsetBottom{
+    return self.contentInset.bottom;
+}
+- (void)setContentInsetBottom:(CGFloat)bottom{
+    UIEdgeInsets insets = self.contentInset;
+    insets.bottom = bottom;
+    self.contentInset = insets;
+}
+
+- (CGFloat)contentInsetLeft{
+    return self.contentInset.left;
+}
+- (void)setContentInsetLeft:(CGFloat)left{
+    UIEdgeInsets insets = self.contentInset;
+    insets.left = left;
+    self.contentInset = insets;
+}
+
+- (CGFloat)contentInsetRight{
+    return self.contentInset.right;
+}
+- (void)setContentInsetRight:(CGFloat)right{
+    UIEdgeInsets insets = self.contentInset;
+    insets.right = right;
+    self.contentInset = insets;
 }
 
 @end

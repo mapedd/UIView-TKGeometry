@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-inline CGPoint TKCGRectCenter(CGRect rect);
-inline CGRect TKCGRectMakeBoundsFromFrame(CGRect frame);
-inline CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size);
-inline CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect);
+CGRect TKBoundsFromFrame(CGRect rect);
+CGPoint TKCGRectCenter(CGRect rect);
+CGRect TKCGRectMakeBoundsFromFrame(CGRect frame);
+CGRect TKCGRectAtCenterWithSize(CGPoint center, CGSize size);
+CGRect TKCGRectCenteredInRect(CGRect innerRect, CGRect outerRect);
 
 @interface UIView (TKGeometry)
 
@@ -74,6 +75,29 @@ inline CGRect TKRectCenteredInRect(CGRect innerRect, CGRect outerRect);
 - (CGFloat)contentOffsetX;
 
 - (CGFloat)contentOffsetY;
+
+
+- (void)setContentHeight:(CGFloat)contentHeight;
+
+- (void)setContentWidth:(CGFloat)contentWidth;
+
+- (CGFloat)contentHeight;
+
+- (CGFloat)contentWidth;
+
+
+- (CGFloat)contentInsetTop;
+- (void)setContentInsetTop:(CGFloat)top;
+
+- (CGFloat)contentInsetBottom;
+- (void)setContentInsetBottom:(CGFloat)bottom;
+
+- (CGFloat)contentInsetLeft;
+- (void)setContentInsetLeft:(CGFloat)left;
+
+- (CGFloat)contentInsetRight;
+- (void)setContentInsetRight:(CGFloat)right;
+
 
 @end
 
